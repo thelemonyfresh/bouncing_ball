@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<head>
+  <title>Bouncing Ball App</title>
+  
+  <!-- stylesheet -->
+  <link rel="stylesheet" type="text/css" href="bb_styles.css">
+
+</head>
+<body>
+  <svg id="main_svg">
+  </svg>
+  <div id="controls">
+
+    Ball:
+    <select id="ball_selector" onchange="select_ball(this.value)"></select> 
+    <button type="button" onclick="add_ball()">Add Ball</button>
+
+    <br>
+
+    Size:<input id="ball_size_range" type="range" min="5" max="150" step="5" oninput="balls[ball_selector.value-1].elem.setAttribute('r',this.value)"/>
+
+    <br>
+
+    <input type="checkbox" id="gravity_checkbox">--gravity
+    <input type="checkbox" id="resistance_checkbox">--fluid resistance
+
+    <br>
+
+    <button type="button" onclick="infinite_improbability_drive()">
+      Infinite Probability Drive
+    </button>
+
+  </div>
+  <!-- main javascript -->
+  <script src="bouncing_ball.js"></script>
+
+</body>
+</html>
